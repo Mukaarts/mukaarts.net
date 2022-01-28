@@ -1,4 +1,22 @@
 {
+    "phpstan/phpstan": {
+        "version": "1.4.3"
+    },
+    "phpstan/phpstan-deprecation-rules": {
+        "version": "1.0.0"
+    },
+    "phpstan/phpstan-doctrine": {
+        "version": "1.2.8"
+    },
+    "phpstan/phpstan-phpunit": {
+        "version": "1.0.0"
+    },
+    "phpstan/phpstan-strict-rules": {
+        "version": "1.1.0"
+    },
+    "phpstan/phpstan-symfony": {
+        "version": "1.1.2"
+    },
     "psr/cache": {
         "version": "3.0.0"
     },
