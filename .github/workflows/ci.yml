@@ -1,6 +1,7 @@
 name: Pipeline-CI
 on:
   push:
+    branches: [ dev ]
 jobs:
   ci:
     runs-on: ubuntu-latest
