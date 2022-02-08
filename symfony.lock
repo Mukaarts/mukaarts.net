@@ -1,4 +1,7 @@
 {
+    "bmitch/churn-php": {
+        "version": "1.6.1"
+    },
     "composer/pcre": {
         "version": "1.0.1"
     },

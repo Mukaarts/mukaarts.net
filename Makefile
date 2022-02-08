@@ -37,6 +37,9 @@ phpstan:
 php-cs-fixer:
 	php vendor/bin/php-cs-fixer fix
 
+churn-php:
+	vendor/bin/churn run --configuration=churn.yml
+
 composer-valid:
 	composer valid
 
@@ -56,4 +59,4 @@ fix:
 	npx eslint assets/ --fix
 	npx stylelint "assets/styles/**/*.scss" --fix
 
-analyse: eslint stylelint twig yaml composer-valid container doctrine phpstan
+analyse: eslint stylelint twig yaml composer-valid container doctrine churn-php phpstan
