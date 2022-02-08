@@ -1,0 +1,34 @@
+@startuml
+
+class Experience {
+    - title: String
+    - employmentType: EmploymentType
+    - company: String
+    - location: String
+    - startDate: Date
+    - endDate: Date
+    - industry: String
+    - description: String
+}
+
+Experience "*" *-- "0" EmploymentType
+class EmploymentType {
+    - title: String
+}
+
+class Education {
+    - school: String
+    - location: String
+    - startDate: Date
+    - endDate: Date
+    - degree: String
+    - description: String
+}
+
+class Skill {
+    - name: String
+    - level: String
+    - description: String
+}
+
+@enduml
