@@ -48,6 +48,7 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "bmitch/churn-php": "^1.6",
         "friendsofphp/php-cs-fixer": "^3.5",
         "phpstan/phpstan": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^1.0",
