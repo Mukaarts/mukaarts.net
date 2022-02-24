@@ -3,14 +3,15 @@
 namespace App\Repository;
 
 use App\Entity\EmploymentType;
+use App\Entity\EmploymentTypeTranslation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @template T
- * @extends ServiceEntityRepository<EmploymentType>
+ * @extends ServiceEntityRepository<EmploymentTypeTranslation>
  */
-class EmploymentTypeRepository extends ServiceEntityRepository
+class EmploymentTypeTranslationRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
