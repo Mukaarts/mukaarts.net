@@ -19,7 +19,7 @@ class EmploymentType implements TranslatableInterface
 
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column(type: Types::INTEGER)]
+    #[ORM\Column(type: Types::INTEGER, nullable: true)]
     private ?int $id = null;
 
     /**
