@@ -3,4 +3,7 @@ module.exports = {
         require('tailwindcss'),
         require('autoprefixer'),
     ],
+    customSyntax: {
+        'scss': 'postcss-scss',
+    },
 };
