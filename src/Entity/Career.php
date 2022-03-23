@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Entity\Traits\IdTrait;
 use App\Repository\CareerRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Column;
@@ -22,9 +24,16 @@ class Career
     #[Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
     private ?\DateTimeImmutable $endDate = null;
 
+    /**
+     * @var Collection<int, Position>
+     */
+    #[ORM\OneToMany(mappedBy: 'career', targetEntity: Position::class, orphanRemoval: true)]
+    private Collection $positions;
+
     public function __construct()
     {
         $this->startDate = new \DateTimeImmutable();
+        $this->positions = new ArrayCollection();
     }
 
     public function getCompany(): string
@@ -61,5 +70,13 @@ class Career
         $this->endDate = $endDate;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Position>
+     */
+    public function getPositions(): Collection
+    {
+        return $this->positions;
     }
 }
