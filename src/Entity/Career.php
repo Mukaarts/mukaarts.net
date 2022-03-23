@@ -18,16 +18,16 @@ class Career
     #[Column(type: Types::STRING, length: 255)]
     private string $company;
 
-    #[Column(type: Types::DATETIME_IMMUTABLE)]
+    #[Column(type: Types::DATE_IMMUTABLE)]
     private \DateTimeImmutable $startDate;
 
-    #[Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
+    #[Column(type: Types::DATE_IMMUTABLE, nullable: true)]
     private ?\DateTimeImmutable $endDate = null;
 
     /**
      * @var Collection<int, Position>
      */
-    #[ORM\OneToMany(mappedBy: 'career', targetEntity: Position::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'career', targetEntity: Position::class, cascade: ['persist'], orphanRemoval: true)]
     private Collection $positions;
 
     public function __construct()
@@ -78,5 +78,27 @@ class Career
     public function getPositions(): Collection
     {
         return $this->positions;
+    }
+
+    public function addPosition(Position $position): self
+    {
+        if (!$this->positions->contains($position)) {
+            $this->positions[] = $position;
+            $position->setCareer($this);
+        }
+
+        return $this;
+    }
+
+    public function removePosition(Position $position): self
+    {
+        if ($this->positions->removeElement($position)) {
+            // set the owning side to null (unless already changed)
+            if ($position->getCareer() === $this) {
+                $position->setCareer(null);
+            }
+        }
+
+        return $this;
     }
 }

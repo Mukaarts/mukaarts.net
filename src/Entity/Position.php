@@ -13,8 +13,18 @@ class Position
 {
     use IdTrait;
 
+    public const TYPE_FULL_TIME = 0;
+    public const TYPE_PART_TIME = 1;
+    public const TYPE_INTERNSHIP = 2;
+
+    private const TYPES = [
+        self::TYPE_FULL_TIME => 'Full time',
+        self::TYPE_PART_TIME => 'Part time',
+        self::TYPE_INTERNSHIP => 'Internship',
+    ];
+
     #[ORM\ManyToOne(targetEntity: Career::class, inversedBy: 'positions')]
-    private Career $career;
+    private ?Career $career = null;
 
     #[Column(type: Types::STRING, length: 255)]
     private string $title;
@@ -22,10 +32,10 @@ class Position
     #[Column(type: Types::INTEGER)]
     private ?int $type = null;
 
-    #[Column(type: Types::DATETIME_IMMUTABLE)]
+    #[Column(type: Types::DATE_IMMUTABLE)]
     private \DateTimeImmutable $startDate;
 
-    #[Column(type: Types::DATETIME_IMMUTABLE, nullable: true)]
+    #[Column(type: Types::DATE_IMMUTABLE, nullable: true)]
     private ?\DateTimeImmutable $endDate = null;
 
     public function __construct()
@@ -33,12 +43,12 @@ class Position
         $this->startDate = new \DateTimeImmutable();
     }
 
-    public function getCareer(): Career
+    public function getCareer(): ?Career
     {
         return $this->career;
     }
 
-    public function setCareer(Career $career): Position
+    public function setCareer(?Career $career): Position
     {
         $this->career = $career;
 
@@ -91,5 +101,10 @@ class Position
         $this->endDate = $endDate;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->title.' ('.self::TYPES[$this->type].')';
     }
 }
