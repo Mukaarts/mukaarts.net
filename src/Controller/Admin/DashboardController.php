@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Career;
+use App\Entity\Education;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -29,5 +30,6 @@ class DashboardController extends AbstractDashboardController
 
         yield MenuItem::section('Experience');
         yield MenuItem::linkToCrud('Career', 'fa fa-briefcase', Career::class);
+        yield MenuItem::linkToCrud('Education', 'fa fa-graduation-cap', Education::class);
     }
 }
