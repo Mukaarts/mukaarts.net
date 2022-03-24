@@ -2,28 +2,26 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Experience;
+use App\Entity\Career;
+use App\Form\PositionType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class ExperienceCrudController extends AbstractCrudController
+class CareerCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Experience::class;
+        return Career::class;
     }
 
     public function configureFields(string $pageName): iterable
     {
-        return [
-            TextField::new('title'),
-            AssociationField::new('employmentType'),
-            TextField::new('company'),
-            TextField::new('location'),
-            Datefield::new('startDate'),
-            Datefield::new('endDate'),
-        ];
+        yield TextField::new('company');
+        yield DateField::new('startDate');
+        yield CollectionField::new('positions')->setEntryType(PositionType::class);
     }
 }
