@@ -5,8 +5,6 @@ namespace App\Repository;
 use App\Entity\Education;
 use App\Interface\Repository\EducationInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\ORM\OptimisticLockException;
-use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
