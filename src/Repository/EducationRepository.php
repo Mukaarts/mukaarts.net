@@ -5,7 +5,6 @@ namespace App\Repository;
 use App\Entity\Education;
 use App\Interface\Repository\EducationInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -20,6 +19,9 @@ class EducationRepository extends ServiceEntityRepository implements EducationIn
         parent::__construct($registry, Education::class);
     }
 
+    /**
+     * @return array<int, Education>
+     */
     public function findAll(): array
     {
         return $this->findBy([], ['id' => 'DESC']);

@@ -1,0 +1,65 @@
+<div id="certification">
+
+    <div class="max-w-7xl mx-auto py-16">
+        <h3 class="text-4xl font-bold pb-8">Certification</h3>
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                    <table class="min-w-full">
+                        <thead class="bg-white border-b">
+                        <tr>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                Title
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                Organization
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                CertificationNumber
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                Issue Date
+                            </th>
+                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                Certificate
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% set count = 1 %}
+                        {% for certification in certifications %}
+                            <tr class="bg-{{ count == 1 ? 'gray' : 'white' }}-100 border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    {{ certification.title }}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{ certification.organization }}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{ certification.certificationNumber }}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {{ certification.startDate|date('Y-m') }}
+                                    {% if certification.endDate != null %}
+                                        - {{ certification.endDate|date('Y-m') }}
+                                    {% endif %}
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    {% if certification.uploadedFileName != null %}
+                                        <a href="{{ vich_uploader_asset(certification) }}"
+                                           class="inline-block px-6 py-2.5 bg-transparent text-blue-600 font-medium text-xs leading-tight uppercase rounded hover:bg-gray-100 focus:text-blue-700 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 active:text-blue-800 transition duration-300 ease-in-out">
+                                            download
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% set count = count == 1 ? 2 : 1 %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
