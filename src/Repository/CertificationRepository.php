@@ -21,6 +21,14 @@ class CertificationRepository extends ServiceEntityRepository implements Certifi
         parent::__construct($registry, Certification::class);
     }
 
+    /**
+     * @return array<int, Certification>
+     */
+    public function findAll(): array
+    {
+        return $this->findBy([], ['id' => 'ASC']);
+    }
+
     public function add(Certification $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);

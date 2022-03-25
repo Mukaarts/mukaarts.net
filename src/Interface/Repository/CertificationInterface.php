@@ -11,6 +11,11 @@ use App\Entity\Certification;
  */
 interface CertificationInterface
 {
+    /**
+     * @return array<int, Certification>
+     */
+    public function findAll(): array;
+
     public function add(Certification $entity, bool $flush = true): void;
 
     public function remove(Certification $entity, bool $flush = true): void;
