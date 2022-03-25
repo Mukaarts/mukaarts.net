@@ -5,10 +5,10 @@ namespace App\Entity;
 use App\Entity\Traits\IdTrait;
 use App\Repository\CertificationRepository;
 use Doctrine\DBAL\Types\Types;
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Column;
 use Doctrine\ORM\Mapping\Entity;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints\File as FileValid;
 use Vich\UploaderBundle\Mapping\Annotation\Uploadable;
 use Vich\UploaderBundle\Mapping\Annotation\UploadableField;
 
@@ -18,13 +18,13 @@ class Certification
 {
     use IdTrait;
 
-    #[ORM\Column(type: Types::STRING)]
+    #[Column(type: Types::STRING)]
     private string $title;
 
-    #[ORM\Column(type: Types::STRING)]
+    #[Column(type: Types::STRING)]
     private string $organization;
 
-    #[ORM\Column(type: Types::STRING, nullable: true)]
+    #[Column(type: Types::STRING, nullable: true)]
     private ?string $certificationNumber = null;
 
     #[Column(type: Types::DATE_IMMUTABLE)]
@@ -36,7 +36,8 @@ class Certification
     #[Column(type: Types::STRING, nullable: true)]
     private ?string $uploadedFileName = null;
 
-    #[UploadableField(mapping: 'certification', fileNameProperty: 'uploadedFileName', mimeType: 'application/pdf')]
+    #[FileValid(maxSize: '1M', mimeTypes: ['application/pdf'])]
+    #[UploadableField(mapping: 'certification', fileNameProperty: 'uploadedFileName')]
     private ?File $uploadedFile = null;
 
     #[Column(type: Types::DATE_IMMUTABLE, nullable: true)]
