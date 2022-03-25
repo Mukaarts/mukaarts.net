@@ -5,17 +5,24 @@ namespace App\Repository;
 use App\Entity\Education;
 use App\Interface\Repository\EducationInterface;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @template T
  * @extends ServiceEntityRepository<Education>
+ * @template-implements EducationInterface<Education>
  */
 class EducationRepository extends ServiceEntityRepository implements EducationInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Education::class);
+    }
+
+    public function findAll(): array
+    {
+        return $this->findBy([], ['id' => 'DESC']);
     }
 
     public function add(Education $entity, bool $flush = true): void

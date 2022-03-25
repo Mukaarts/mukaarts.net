@@ -19,5 +19,20 @@
             {% endfor %}
         </div>
 
+        <div id="education">
+            <h3 class="text-4xl font-bold pb-8">Education</h3>
+            {% for education in education_experience %}
+                <div>
+                    <h4 class="font-bold text-xl">{{ education.school }}</h4>
+                    <p class="font-light text-sm text-gray-500">
+                        {{ education.startDate|date('Y-m') }} -
+                        {{ education.endDate == null ? 'today' : education.endDate|date('Y-m')}}
+                    </p>
+                </div>
+            {% else %}
+                <p>No education</p>
+            {% endfor %}
+        </div>
+
     </div>
 </div>
