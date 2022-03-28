@@ -7,3 +7,6 @@ vich_uploader:
         certification:
             uri_prefix: /uploads/certification
             upload_destination: '%kernel.project_dir%/public/uploads/certification'
+        testimonial_image:
+            uri_prefix: /uploads/testimonial_image
+            upload_destination: '%kernel.project_dir%/public/uploads/testimonial_image'

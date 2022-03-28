@@ -8,6 +8,7 @@ use App\Entity\Course;
 use App\Entity\Education;
 use App\Entity\Mentor;
 use App\Entity\Skill;
+use App\Entity\Testimonial;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -43,5 +44,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Configuration');
         yield MenuItem::linkToCrud('Skill', 'fa fa-star', Skill::class);
         yield MenuItem::linkToCrud('Mentor', 'fa fa-user-tie', Mentor::class);
+        yield MenuItem::linkToCrud('Testimonial', 'fa fa-quote-right', Testimonial::class);
     }
 }
