@@ -38,7 +38,7 @@ class Course
     #[ManyToMany(targetEntity: Skill::class, inversedBy: 'courses')]
     private Collection $skills;
 
-    #[ManyToOne(targetEntity: Mentor::class, inversedBy: 'course')]
+    #[ManyToOne(targetEntity: Mentor::class, inversedBy: 'courses')]
     private ?Mentor $mentor = null;
 
     public function __construct()
