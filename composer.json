@@ -56,6 +56,7 @@
     },
     "require-dev": {
         "bmitch/churn-php": "^1.6",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "friendsofphp/php-cs-fixer": "^3.5",
         "phpstan/phpstan": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^1.0",
