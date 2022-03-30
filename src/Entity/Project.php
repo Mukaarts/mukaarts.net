@@ -19,6 +19,8 @@ class Project
 {
     use IdTrait;
 
+    public const TYPE_WEB = 0;
+
     #[Column(type: Types::STRING)]
     private string $title;
 
@@ -29,13 +31,13 @@ class Project
     private int $type;
 
     #[Column(type: Types::STRING, nullable: true)]
-    private ?string $image = null;
+    private ?string $fileName = null;
 
-    #[UploadableField(mapping: 'project_image', fileNameProperty: 'image')]
-    private ?File $imageFile = null;
+    #[UploadableField(mapping: 'projects', fileNameProperty: 'fileName')]
+    private ?File $file = null;
 
     #[Column(type: Types::DATE_IMMUTABLE, nullable: true)]
-    private ?\DateTimeImmutable $updatedImageAt = null;
+    private ?\DateTimeImmutable $updatedFileAt = null;
 
     public function getTitle(): string
     {
@@ -73,29 +75,34 @@ class Project
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getFileName(): ?string
     {
-        return $this->image;
+        return $this->fileName;
     }
 
-    public function setImage(?string $image): self
+    public function setImage(?string $fileName): self
     {
-        $this->image = $image;
+        $this->fileName = $fileName;
 
         return $this;
     }
 
-    public function getImageFile(): ?File
+    public function getFile(): ?File
     {
-        return $this->imageFile;
+        return $this->file;
     }
 
-    public function setImageFile(?File $imageFile): void
+    public function setImageFile(?File $file): void
     {
-        $this->imageFile = $imageFile;
+        $this->file = $file;
 
-        if (null !== $imageFile) {
-            $this->updatedImageAt = new \DateTimeImmutable();
+        if (null !== $file) {
+            $this->updatedFileAt = new \DateTimeImmutable();
         }
+    }
+
+    public function __toString(): string
+    {
+        return $this->title;
     }
 }
