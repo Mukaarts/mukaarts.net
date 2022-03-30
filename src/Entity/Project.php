@@ -21,6 +21,10 @@ class Project
 
     public const TYPE_WEB = 0;
 
+    private const TYPES = [
+        self::TYPE_WEB => 'Web',
+    ];
+
     #[Column(type: Types::STRING)]
     private string $title;
 
@@ -66,6 +70,11 @@ class Project
     public function getType(): int
     {
         return $this->type;
+    }
+
+    public function getTypeLabel(): string
+    {
+        return self::TYPES[$this->type];
     }
 
     public function setType(int $type): Project
