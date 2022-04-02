@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\BlogArticle;
 use App\Entity\Career;
 use App\Entity\Certification;
 use App\Entity\Course;
@@ -9,6 +10,7 @@ use App\Entity\Education;
 use App\Entity\Project;
 use App\Entity\Skill;
 use App\Entity\Testimonial;
+use App\Interface\Repository\BlogArticleInterface;
 use App\Interface\Repository\CertificationInterface;
 use App\Interface\Repository\CourseInterface;
 use App\Interface\Repository\EducationInterface;
@@ -23,6 +25,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
+     * @param BlogArticleInterface<BlogArticle>     $blogArticle
      * @param CareerRepository<Career>              $careerRepository
      * @param CertificationInterface<Certification> $certification
      * @param CourseInterface<Course>               $course
@@ -35,6 +38,7 @@ class HomeController extends AbstractController
      */
     #[Route(path: '/', name: 'home')]
     public function index(
+        BlogArticleInterface $blogArticle,
         CareerRepository $careerRepository,
         CertificationInterface $certification,
         CourseInterface $course,
@@ -45,6 +49,7 @@ class HomeController extends AbstractController
     ): Response {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
+            'blog_articles' => $blogArticle->findAllBlogArticles(),
             'career_experience' => $careerRepository->findAll(),
             'certifications' => $certification->findAll(),
             'courses' => $course->findAllCourses(),
