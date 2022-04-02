@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\BlogArticle;
 use App\Entity\Career;
 use App\Entity\Certification;
 use App\Entity\Course;
@@ -38,6 +39,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Career', 'fa fa-briefcase', Career::class);
         yield MenuItem::linkToCrud('Education', 'fa fa-graduation-cap', Education::class);
         yield MenuItem::linkToCrud('Projects', 'fa fa-folder-open', Project::class);
+        yield MenuItem::linkToCrud('Blog Posts', 'fa fa-book', BlogArticle::class);
 
         yield MenuItem::section('Learning');
         yield MenuItem::linkToCrud('Certification', 'fa fa-certificate', Certification::class);
