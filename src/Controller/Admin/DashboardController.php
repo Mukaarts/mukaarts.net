@@ -7,6 +7,7 @@ use App\Entity\Certification;
 use App\Entity\Course;
 use App\Entity\Education;
 use App\Entity\Mentor;
+use App\Entity\Project;
 use App\Entity\Skill;
 use App\Entity\Testimonial;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -36,6 +37,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::section('Experience');
         yield MenuItem::linkToCrud('Career', 'fa fa-briefcase', Career::class);
         yield MenuItem::linkToCrud('Education', 'fa fa-graduation-cap', Education::class);
+        yield MenuItem::linkToCrud('Projects', 'fa fa-folder-open', Project::class);
 
         yield MenuItem::section('Learning');
         yield MenuItem::linkToCrud('Certification', 'fa fa-certificate', Certification::class);

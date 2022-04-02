@@ -10,3 +10,6 @@ vich_uploader:
         testimonial_image:
             uri_prefix: /uploads/testimonial_image
             upload_destination: '%kernel.project_dir%/public/uploads/testimonial_image'
+        projects:
+            uri_prefix: /uploads/projects
+            upload_destination: '%kernel.project_dir%/public/uploads/projects'
