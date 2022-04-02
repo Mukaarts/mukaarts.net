@@ -89,7 +89,7 @@ class Project
         return $this->fileName;
     }
 
-    public function setImage(?string $fileName): self
+    public function setFileName(?string $fileName): self
     {
         $this->fileName = $fileName;
 
@@ -101,7 +101,7 @@ class Project
         return $this->file;
     }
 
-    public function setImageFile(?File $file): void
+    public function setFile(?File $file): void
     {
         $this->file = $file;
 

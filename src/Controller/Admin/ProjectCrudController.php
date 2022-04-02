@@ -24,6 +24,6 @@ class ProjectCrudController extends AbstractCrudController
         yield ChoiceField::new('type')->setChoices([
             'Web' => Project::TYPE_WEB,
         ]);
-        yield Field::new('imageFile')->setFormType(VichImageType::class);
+        yield Field::new('file')->setFormType(VichImageType::class);
     }
 }
