@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+  <file source-language="en" target-language="de" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
       <trans-unit id="U_Xnxai" resname="experience">
         <source>experience</source>
-        <target>Experience</target>
+        <target>Erfahrung</target>
       </trans-unit>
       <trans-unit id="MsHPSaL" resname="skills">
         <source>skills</source>
-        <target>Compétences</target>
+        <target>Fähigkeiten</target>
       </trans-unit>
       <trans-unit id="k25cxQI" resname="courses">
         <source>courses</source>
-        <target>Courses</target>
+        <target>Kurse</target>
       </trans-unit>
       <trans-unit id="JXfA9Ve" resname="projects">
         <source>projects</source>
-        <target>Projects</target>
+        <target>Projekte</target>
       </trans-unit>
       <trans-unit id="3vU_lfH" resname="blog">
         <source>blog</source>
@@ -27,11 +27,11 @@
       </trans-unit>
       <trans-unit id="hN_qhIN" resname="testimonial">
         <source>testimonial</source>
-        <target>Témoignage</target>
+        <target>Empfehlung</target>
       </trans-unit>
       <trans-unit id="ThJfPdD" resname="my_skills">
         <source>my_skills</source>
-        <target>__my_skills</target>
+        <target>Meine Fähigkeiten</target>
       </trans-unit>
       <trans-unit id="3dYrkIX" resname="my_skills_description">
         <source>my_skills_description</source>
@@ -39,11 +39,11 @@
       </trans-unit>
       <trans-unit id="tOnEfrG" resname="all_skills">
         <source>all_skills</source>
-        <target>__all_skills</target>
+        <target>Alle Fähigkeiten anzeigen</target>
       </trans-unit>
       <trans-unit id="6TWNxIK" resname="testimonials">
         <source>testimonials</source>
-        <target>Témoignage</target>
+        <target>Empfehlungen</target>
       </trans-unit>
       <trans-unit id="fjDl3jy" resname="blog_description">
         <source>blog_description</source>
@@ -67,7 +67,7 @@
       </trans-unit>
       <trans-unit id="6DG_sEw" resname="certifications">
         <source>certifications</source>
-        <target>Certifications</target>
+        <target>Bescheinigung</target>
       </trans-unit>
       <trans-unit id="GmqU3CE" resname="mukaarts">
         <source>mukaarts</source>
@@ -75,7 +75,7 @@
       </trans-unit>
       <trans-unit id="Y5JDaek" resname="im_michael_ferreira">
         <source>im_michael_ferreira</source>
-        <target>Je suis Michael Ferreira</target>
+        <target>Ich bin Michael Ferreira</target>
       </trans-unit>
       <trans-unit id="8i7QQic" resname="i_love_programming_i_got_everything_i_learned_on_t">
         <source>i_love_programming_i_got_everything_i_learned_on_t</source>
@@ -83,39 +83,39 @@
       </trans-unit>
       <trans-unit id="hTN72ic" resname="buy_coffee">
         <source>buy_coffee</source>
-        <target>Acheté moi un caffe</target>
+        <target>Spende mir einen kaffee</target>
       </trans-unit>
       <trans-unit id="sApsEIV" resname="certification">
         <source>certification</source>
-        <target>Certification</target>
+        <target>Bescheinigung</target>
       </trans-unit>
       <trans-unit id="qvIyBkY" resname="title">
         <source>title</source>
-        <target>Titre</target>
+        <target>Titel</target>
       </trans-unit>
       <trans-unit id="rzobsxK" resname="organization">
         <source>organization</source>
-        <target>Organisation</target>
+        <target>Einrichtung</target>
       </trans-unit>
       <trans-unit id="U9PsDOv" resname="certification_number">
         <source>certification_number</source>
-        <target>ID du certificat</target>
+        <target>Zertifikats-ID</target>
       </trans-unit>
       <trans-unit id="iQitRW7" resname="issue_date">
         <source>issue_date</source>
-        <target>Date d'émission</target>
+        <target>Ausgabedatum</target>
       </trans-unit>
       <trans-unit id="A9Zt0Ig" resname="certificate">
         <source>certificate</source>
-        <target>Certificat</target>
+        <target>Nachweis</target>
       </trans-unit>
       <trans-unit id="YiQpN5L" resname="show_certificate">
         <source>show_certificate</source>
-        <target>voir le certificat</target>
+        <target>Bescheinigung anzeigen</target>
       </trans-unit>
       <trans-unit id="4PT3Z6y" resname="today">
         <source>today</source>
-        <target>aujourd'hui</target>
+        <target>heute</target>
       </trans-unit>
       <trans-unit id="ah5tn1u" resname="no_experience">
         <source>no_experience</source>
@@ -123,7 +123,7 @@
       </trans-unit>
       <trans-unit id="aL8BCcb" resname="education">
         <source>education</source>
-        <target>Éducation</target>
+        <target>Bildung</target>
       </trans-unit>
       <trans-unit id="Up62IYr" resname="no_education">
         <source>no_education</source>
@@ -135,7 +135,7 @@
       </trans-unit>
       <trans-unit id="qQgEPtR" resname="course">
         <source>course</source>
-        <target>Course</target>
+        <target>Kurs</target>
       </trans-unit>
       <trans-unit id="KA1Eqx6" resname="welcome">
         <source>welcome</source>

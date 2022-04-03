@@ -36,7 +36,7 @@ class HomeController extends AbstractController
      *
      * @return Response
      */
-    #[Route(path: '/', name: 'home')]
+    #[Route(path: '/{_locale}', name: 'home', locale: 'en')]
     public function index(
         BlogArticleInterface $blogArticle,
         CareerRepository $careerRepository,

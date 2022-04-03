@@ -1,9 +1,8 @@
 <div id="skills" class="py-16 bg-indigo-100">
     <section class="text-gray-600 body-font">
         <div class="text-center mb-20">
-            <h3 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">My.skills</h3>
-            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Blue bottle crucifix vinyl post-ironic four
-                dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug.</p>
+            <h3 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">{{ 'my_skills'|trans }}</h3>
+            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">{{ 'my_skills_description'|trans }}</p>
         </div>
         <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
             {% for skill in skills|slice(0, 5) %}
@@ -23,7 +22,7 @@
             <a href="https://www.linkedin.com/in/michael-ferreira-2b53449a/"
                target="_blank"
                class="mx-auto mt-16 px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                all.skills
+                {{ 'all_skills'|trans }}
             </a>
         </div>
     </section>
